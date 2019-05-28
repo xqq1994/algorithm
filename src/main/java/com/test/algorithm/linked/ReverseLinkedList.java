@@ -1,6 +1,5 @@
 package com.test.algorithm.linked;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /**
  * @Author xiaoqiangqiang
