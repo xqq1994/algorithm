@@ -26,14 +26,18 @@ public class SwapNodesinPairs {
             val = x;
         }
     }
+    //递归法
     public static ListNode swapPairs(ListNode head) {
-//        if(head == null || head.next == null){
-//            return head;
-//        }
-//        ListNode next = head.next;
-//        head.next = swapPairs(next.next);
-//        next.next = head;
-//        return next;
+        if(head == null || head.next == null){
+            return head;
+        }
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
+    }
+    //直接法
+    public static ListNode swapPairs1(ListNode head) {
         ListNode dump = new ListNode(0);
         ListNode p = dump;
         while (head != null){
