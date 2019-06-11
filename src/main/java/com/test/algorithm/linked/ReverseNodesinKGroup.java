@@ -1,8 +1,6 @@
 package com.test.algorithm.linked;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * TODO 25、K个一组翻转链表
