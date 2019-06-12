@@ -31,7 +31,7 @@ public class KthLargestElementInAStream {
         final int k;
         public KthLargest(int k, int[] nums) {
             this.k = k;
-            q = new PriorityQueue<>();
+            q = new PriorityQueue<>(k);
             for (int num : nums) {
                 add(num);
             }
