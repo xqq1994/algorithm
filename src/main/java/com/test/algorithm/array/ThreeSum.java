@@ -65,11 +65,7 @@ public class ThreeSum {
                         }else if(sum < 0){
                             l++;
                         }else{
-                            ArrayList<Integer> integers = new ArrayList<>();
-                            integers.add(nums[i]);
-                            integers.add(nums[l]);
-                            integers.add(nums[r]);
-                            ls.add(integers);
+                            ls.add(Arrays.asList(nums[i], nums[l], nums[r]));
                             while (l < r && nums[l] == nums[l + 1]){
                                 l++;
                             }
