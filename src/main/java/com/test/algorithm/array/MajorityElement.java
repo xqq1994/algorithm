@@ -24,6 +24,7 @@ import java.util.HashMap;
  **/
 public class MajorityElement {
     class Solution {
+        //自己直接实现
         public int majorityElement(int[] nums) {
             HashMap<Integer, Integer> map = new HashMap<>();
             for (int i = 0; i < nums.length; i++) {
@@ -38,7 +39,7 @@ public class MajorityElement {
             }
             return 0;
         }
-
+        //直接调用api
         public int majorityElement1(int[] nums) {
             Arrays.sort(nums);
             return nums[nums.length / 2];
