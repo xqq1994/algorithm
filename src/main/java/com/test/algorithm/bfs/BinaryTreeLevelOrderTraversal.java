@@ -41,7 +41,7 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     class Solution {
-        //BFS
+        //BFS广度优先
         public List<List<Integer>> levelOrder(TreeNode root) {
             List<List<Integer>> res = new ArrayList<>();
             if (root == null) {
@@ -63,23 +63,22 @@ public class BinaryTreeLevelOrderTraversal {
             return res;
         }
 
-        //DFS
+        //DFS深度优先
         public List<List<Integer>> levelOrder1(TreeNode root) {
             List<List<Integer>> res = new ArrayList<>();
             if (root == null) {
                 return res;
             }
-            dfs(root, res, 0);
+            dfs(root,res,0);
             return res;
         }
 
         public void dfs(TreeNode root, List<List<Integer>> list, Integer level) {
-            if (root == null) return;
-            if (list.size() < level + 1) {
+            if(root == null) return;
+            if(list.size() < level+1){
                 list.add(new ArrayList<>());
             }
-            List<Integer> integers = list.get(level);
-            integers.add(root.val);
+            list.get(level).add(root.val);
             dfs(root.left,list,level +1);
             dfs(root.right,list,level +1);
         }
