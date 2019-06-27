@@ -1,4 +1,4 @@
-package com.test.algorithm.bfs;
+package com.test.algorithm.bfsordfs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
