@@ -22,7 +22,7 @@ package com.test.algorithm.bitoperation;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * **/
 public class CountingBits {
-    class Solution {
+    static class Solution {
         public int[] countBits(int num) {
             int[] res = new int[num+1];
             for (int i = 1; i <= num; i++) {
@@ -30,5 +30,10 @@ public class CountingBits {
             }
             return res;
         }
+    }
+
+    public static void main(String[] args) {
+        int[] ints = new Solution().countBits(3);
+        System.out.println(ints);
     }
 }
