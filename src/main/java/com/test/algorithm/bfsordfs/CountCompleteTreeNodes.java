@@ -79,7 +79,40 @@ public class CountCompleteTreeNodes {
             dfs(node.left);
             dfs(node.right);
         }
+        private int getLeftmostPathHeight(TreeNode root) {
+            int h = 0;
+            while (root != null) {
+                root = root.left;
+                h += 1;
+            }
+            return h;
+        }
+        //O((logn)^2)
+        public int countNodes2(TreeNode root) {
+            if (root == null) {
+                return 0;
+            }
+            int ans = 0;
+            TreeNode curr = root;
+            while (curr != null) {
+                int l = getLeftmostPathHeight(curr.left);
+                int r = getLeftmostPathHeight(curr.right);
+
+                // in case left and right subtree have same height, go right subtree
+                // because left subtree will be full
+                if (l == r) {
+                    ans += 1 << l;
+                    curr = curr.right;
+                } else { // in case left subtree is higher, go left subtree
+                    // because right subtree will be full
+                    ans += 1 << r;
+                    curr = curr.left;
+                }
+            }
+            return ans;
+        }
     }
+
     public static TreeNode stringToTreeNode(String input) {
         input = input.trim();
         input = input.substring(1, input.length() - 1);
@@ -130,7 +163,7 @@ public class CountCompleteTreeNodes {
         while ((line = in.readLine()) != null) {
             TreeNode root = stringToTreeNode(line);
 
-            int ret = new Solution().countNodes1(root);
+            int ret = new Solution().countNodes2(root);
 
             String out = String.valueOf(ret);
 
