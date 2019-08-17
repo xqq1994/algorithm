@@ -48,7 +48,7 @@ public class MatchsticksToSquare {
                 }
             }
             Arrays.sort(nums);
-            return dfs(nums, nums.length - 1, new int[4], sum / 4);
+            return dfs(nums, nums.length - 1, new int[4], target);
         }
 
         public boolean dfs(int[] nums, int pos, int[] sums, int avg) {
