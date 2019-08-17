@@ -36,31 +36,37 @@ public class MatchsticksToSquare {
             for (int i = 0; i < nums.length; i++) {
                 sum += nums[i];
             }
+            //是否是4的倍数
             if (sum == 0 || sum % 4 != 0) {
                 return false;
             }
             int target = sum / 4;
+            //有比target大的数直接false
             for (int num : nums) {
                 if (num > target) {
                     return false;
                 }
             }
             Arrays.sort(nums);
-            return allocate(nums, nums.length - 1, new int[4], sum / 4);
+            return dfs(nums, nums.length - 1, new int[4], sum / 4);
         }
 
-        public boolean allocate(int[] nums, int pos, int[] sums, int avg) {
-            if (pos == -1){
+        public boolean dfs(int[] nums, int pos, int[] sums, int avg) {
+            //终止条件
+            if (pos == -1) {
                 return sums[0] == avg && sums[1] == avg && sums[2] == avg;
             }
             for (int i = 0; i < 4; ++i) {
-                if (sums[i] + nums[pos] > avg){
+                //大于所以不满足条件则跳过
+                if (sums[i] + nums[pos] > avg) {
                     continue;
                 }
                 sums[i] += nums[pos];
-                if (allocate(nums, pos - 1, sums, avg)){
+                //继续遍历剩下的火柴
+                if (dfs(nums, pos - 1, sums, avg)) {
                     return true;
                 }
+                //回溯减去
                 sums[i] -= nums[pos];
             }
             return false;
@@ -68,6 +74,6 @@ public class MatchsticksToSquare {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().makesquare(new int[]{5,5,5,5,4,4,4,4,3,3,3,3}));
+        System.out.println(new Solution().makesquare(new int[]{5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 3}));
     }
 }
