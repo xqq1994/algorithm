@@ -25,7 +25,7 @@ public class SuperPow {
             int exp = 0;
 //            int phi = euler(c);
             //同余
-            for (int i = 0; i < b.length; i++){
+            for (int i = 0; i < b.length; i++) {
                 exp = (exp * 10 + b[i]) % 1140;
             }
             return qucikPow(a % 1337, exp, 1337);
@@ -60,10 +60,20 @@ public class SuperPow {
             }
             return ret;
         }
+        //根本算不出来，python的好处体现出来了
+        public int superPow1(int a, int[] b) {
+            int c = 0;
+            for (int i = 0; i < b.length; i++) {
+                c = c*10 + b[i];
+            }
+            double pow = Math.pow(a, c);
+
+            return (int)pow % 1337;
+        }
+
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().euler(1337));
-        System.out.println(new Solution().superPow(2, new int[]{3}));
+        System.out.println(new Solution().superPow1(2147483647, new int[]{2,0,0}));
     }
 }
