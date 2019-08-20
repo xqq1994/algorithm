@@ -29,6 +29,7 @@ import java.util.*;
  * @return
  */
 public class RandomPickIndex {
+    //使用字典集空间复杂度高但时间复杂度低
     class Solution {
         Map<Integer, List<Integer>> map = new HashMap<>();
         Random rmd = new Random();
@@ -55,7 +56,7 @@ public class RandomPickIndex {
         }
 
     }
-
+    //说实话不怎么喜欢这个题解，时间复杂度O(n)，空间复杂度低
     class Solution1 {
         int[] nums;
         Random random;
