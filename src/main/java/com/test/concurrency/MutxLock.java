@@ -1,4 +1,4 @@
-package com.test.cas;
+package com.test.concurrency;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.locks.Lock;
