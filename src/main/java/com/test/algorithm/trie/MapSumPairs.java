@@ -52,10 +52,11 @@ public class MapSumPairs {
             return a;
         }
     }
+    //Trie数 反而慢无语了
     static class MapSumTrie {
         class TrieNode {
             public int val;
-            public TreeMap<Character,TrieNode> next = new TreeMap();
+            public TreeMap<Character,TrieNode> next;
             public TrieNode() {
                 this(0);
             }
