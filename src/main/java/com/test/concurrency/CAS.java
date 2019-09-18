@@ -11,7 +11,7 @@ public class CAS {
         int count = 10000000;
         long l = System.currentTimeMillis();
         for (int i = 0; i < count; i++) {
-            CompletableFuture.runAsync(() -> transfer1(1));
+            CompletableFuture.runAsync(() -> transfer2(1));
         }
         while (balance.get() < count) {
             try {
