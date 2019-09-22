@@ -1,4 +1,4 @@
-package com.test.algorithm.array;
+package com.test.algorithm.other;
 /**
  * @Author xiaoqiangqiang
  * @Description //TODO 263. 丑数
