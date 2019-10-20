@@ -23,7 +23,7 @@ import java.util.HashMap;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  **/
 public class MajorityElement {
-    class Solution {
+    static class Solution {
         //自己直接实现
         public int majorityElement(int[] nums) {
             HashMap<Integer, Integer> map = new HashMap<>();
@@ -62,5 +62,9 @@ public class MajorityElement {
             return maj;
         }
 
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution().majorityElement2(new int[]{3, 2, 3}));
     }
 }
