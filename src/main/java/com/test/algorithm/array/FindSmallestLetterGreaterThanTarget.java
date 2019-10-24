@@ -65,9 +65,26 @@ public class FindSmallestLetterGreaterThanTarget {
             }
             return letters[0];
         }
+        //二分法
+        //循环结束时 l 指向数组中比目标字母大的最小字母，如果目标字母比所有字母都大，则 l = letters.size()，l mod letters.size() = 0，指向数组第一个字母。
+        public char nextGreatestLetter1(char[] letters, char target) {
+            int len = letters.length;
+            int l = 0;
+            int r = len - 1;
+            while (l <= r){
+                int mid = (l + r) / 2;
+                if(target < letters[mid]){
+                    r = mid - 1;
+                }else{
+                    l = mid + 1;
+                }
+            }
+            return letters[l % len];
+        }
+
     }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'j'));
+        System.out.println(new Solution().nextGreatestLetter1(new char[]{'c', 'f', 'j'}, 'c'));
     }
 }
