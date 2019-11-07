@@ -1,8 +1,6 @@
 package com.test.algorithm.array;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * TODO 290. 单词规律
@@ -61,6 +59,19 @@ public class WordPattern {
             }
             return true;
         }
+    }
+    public static boolean wordPattern (String  pattern, String str) {
+        String[] strings = str.split(" ");
+        if(pattern.length() != strings.length){
+            return false;
+        }
+        Map<Object,Integer> hashMap = new HashMap<>();
+        for(int i = 0;i < pattern.length();i++){
+            if(!Objects.equals(hashMap.put(pattern.charAt(i),i),hashMap.put(strings[i],i))){
+                return false;
+            }
+        }
+        return true;
     }
 
     public static void main(String[] args) {
