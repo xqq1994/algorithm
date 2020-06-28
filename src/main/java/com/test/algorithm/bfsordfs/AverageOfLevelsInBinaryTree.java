@@ -57,6 +57,8 @@ public class AverageOfLevelsInBinaryTree {
                     }
                     if(poll.right != null){
                         queue.add(poll.right);
+
+//
                     }
                 }
                 list.add(sum / size);
